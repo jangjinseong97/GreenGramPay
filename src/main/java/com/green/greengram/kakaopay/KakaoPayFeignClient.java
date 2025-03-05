@@ -5,15 +5,17 @@ import com.green.greengram.kakaopay.model.*;
 import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 @FeignClient(name = "kakaoPayApi"
-           , url = "https://open-api.kakaopay.com/online/v1/payment"
+           , url = "${constants.kakao-pay.base-url}"
            , configuration = { FeignClientKakaoPayConfiguration.class })
+// configuration 추가도 가능(공통부분)
 public interface KakaoPayFeignClient {
 
 
     @PostMapping(value = "/ready")
-    KakaoPayReadyRes postReady(KakaoPayReadyFeignReq req);
+    KakaoPayReadyRes postReady(@RequestBody KakaoPayReadyFeignReq req);
 
     @PostMapping(value = "/approve")
     KakaoPayApproveRes postApprove(KakaoPayApproveFeignReq req);
