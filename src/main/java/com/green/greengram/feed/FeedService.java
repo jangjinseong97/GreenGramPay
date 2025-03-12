@@ -50,6 +50,12 @@ public class FeedService {
         feed.setContents(p.getContents());
         feed.setLocation(p.getLocation());
 
+//        Feed feed = Feed.builder()
+//                .writerUser(signedUser)
+//                .contents(p.getContents())
+//                .location(p.getLocation())
+//                .build();
+
 //        int result = feedMapper.insFeed(p);
 //        if(result == 0) {
 //            throw new CustomException(FeedErrorCode.FAIL_TO_REG);

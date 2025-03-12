@@ -25,10 +25,10 @@ public class User extends UpdatedAt {
     @GeneratedValue(strategy = GenerationType.IDENTITY) //auto_increment
     private Long userId; // user_id
 
-    @Column(nullable = false)
+    @Column(nullable = false, length = 2)
     private SignInProviderType providerType;
 
-    @Column(nullable = false, length = 30)
+    @Column(nullable = false, length = 50)
     private String uid;
 
     @Column(nullable = false, length = 100)
@@ -37,7 +37,7 @@ public class User extends UpdatedAt {
     @Column(length = 30)
     private String nickName; //nick_name
 
-    @Column(length = 50)
+    @Column(length = 100)
     private String pic;
 
     @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)

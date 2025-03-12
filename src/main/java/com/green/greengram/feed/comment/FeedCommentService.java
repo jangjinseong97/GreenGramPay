@@ -27,9 +27,10 @@ public class FeedCommentService {
 //        p.setUserId(authenticationFacade.getSignedUserId());
 //        mapper.insFeedComment(p);
 //        return p.getFeedCommentId();
+
         Feed feed = new Feed();
         feed.setFeedId(p.getFeedId());
-
+//        Feed feed = Feed.builder().feedId(p.getFeedId()).build();
         User user = new User();
         user.setUserId(authenticationFacade.getSignedUserId());
 

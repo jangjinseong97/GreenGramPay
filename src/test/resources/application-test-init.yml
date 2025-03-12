@@ -1,8 +1,3 @@
-mybatis:
-  configuration:
-    map-underscore-to-camel-case: true #snake_case column명을 자동으로 camel_case형으로 변환
-  mapper-locations: mappers/**/*.xml
-
 file:
   directory: D:/2024-02/download/tdd
 
@@ -13,5 +8,5 @@ spring:
     password: green502
   jpa:
     hibernate:
-      ddl-auto: none # 이거때문에 test에 데이터를 넣는 sql이 필요
+      ddl-auto: create # 이거때문에 test에 데이터를 넣는 sql이 필요
     #ddl-auto: validate # 서버 킬때마다 같은지 확인
